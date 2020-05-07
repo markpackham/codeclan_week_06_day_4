@@ -36,4 +36,5 @@ const handleSubmitForm = function (event) {
   event.preventDefault();
   const resultForm = document.querySelector("#reading-list");
   resultForm.textContent = `${this.title.value} ${this.author.value} ${this.selected}`;
+  document.getElementById("new-item-form").reset();
 };
