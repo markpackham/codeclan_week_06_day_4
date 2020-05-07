@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const textInputAuthor = document.querySelector("#author");
   textInputAuthor.addEventListener("input", handleInputAuthor);
 
-  const select = document.querySelector("#category");
-  select.addEventListener("change", handleSelect);
+  const selectedCategory = document.querySelector("#category");
+  selectedCategory.addEventListener("change", handleSelect);
 
   const form = document.querySelector("#new-item-form");
   form.addEventListener("submit", handleSubmitForm);
@@ -16,25 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const handleInputTitle = function (event) {
   let title = event.target.value;
-  const resultForm = document.querySelector("#reading-list");
-  // resultForm.textContent = `${title}`;
 };
 
 const handleInputAuthor = function (event) {
   let author = event.target.value;
-  const resultForm = document.querySelector("#reading-list");
-  // resultForm.textContent = `${author}`;
 };
 
 const handleSelect = function (event) {
-  let selected = event.target.value;
-  const resultForm = document.querySelector("#reading-list");
-  // resultForm.textContent = `${selected}`;
+  let selected = "Book";
+  selected = event.target.value;
+  console.log(selected);
 };
 
 const handleSubmitForm = function (event) {
   event.preventDefault();
   const resultForm = document.querySelector("#reading-list");
-  resultForm.textContent = `${this.title.value} ${this.author.value} ${this.selected}`;
+  resultForm.textContent = `${this.title.value} ${this.author.value} `;
+  console.log(this.selected.value);
   document.getElementById("new-item-form").reset();
 };
