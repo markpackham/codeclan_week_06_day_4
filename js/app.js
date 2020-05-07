@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.querySelector("#new-item-form");
   form.addEventListener("submit", handleSubmitForm);
+
+  const delete_all = document.querySelector("#delete-all");
+  delete_all.addEventListener("submit", handleDeleteAll);
 });
 
 const handleInputTitle = function (event) {
@@ -24,4 +27,10 @@ const handleSubmitForm = function (event) {
   const resultForm = document.querySelector("#reading-list");
   resultForm.textContent = `${this.title.value} ${this.author.value} ${event.target.category.value}`;
   document.getElementById("new-item-form").reset();
+};
+
+const handleDeleteAll = function (event) {
+  event.preventDefault();
+  const deleteForm = document.querySelector("#reading-list");
+  deleteForm.textContent = "";
 };
